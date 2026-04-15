@@ -1,0 +1,1 @@
+savedcmd_/workspaces/Linux-Kernel-Module/mydriver.ko := ld -r -m elf_x86_64 -z noexecstack --no-warn-rwx-segments --build-id=sha1  -T scripts/module.lds -o /workspaces/Linux-Kernel-Module/mydriver.ko /workspaces/Linux-Kernel-Module/mydriver.o /workspaces/Linux-Kernel-Module/mydriver.mod.o

@@ -1,0 +1,1 @@
+savedcmd_/workspaces/Linux-Kernel-Module/Module.symvers :=  scripts/mod/modpost -M -m -a      -o /workspaces/Linux-Kernel-Module/Module.symvers -T /workspaces/Linux-Kernel-Module/modules.order -i Module.symvers -e 

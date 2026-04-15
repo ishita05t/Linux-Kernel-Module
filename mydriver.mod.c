@@ -1,0 +1,117 @@
+#include <linux/module.h>
+#define INCLUDE_VERMAGIC
+#include <linux/build-salt.h>
+#include <linux/elfnote-lto.h>
+#include <linux/export-internal.h>
+#include <linux/vermagic.h>
+#include <linux/compiler.h>
+
+#ifdef CONFIG_UNWINDER_ORC
+#include <asm/orc_header.h>
+ORC_HEADER;
+#endif
+
+BUILD_SALT;
+BUILD_LTO_INFO;
+
+MODULE_INFO(vermagic, VERMAGIC_STRING);
+MODULE_INFO(name, KBUILD_MODNAME);
+
+__visible struct module __this_module
+__section(".gnu.linkonce.this_module") = {
+	.name = KBUILD_MODNAME,
+	.init = init_module,
+#ifdef CONFIG_MODULE_UNLOAD
+	.exit = cleanup_module,
+#endif
+	.arch = MODULE_ARCH_INIT,
+};
+
+#ifdef CONFIG_RETPOLINE
+MODULE_INFO(retpoline, "Y");
+#endif
+
+
+
+static const char ____versions[]
+__used __section("__versions") =
+	"\x1c\x00\x00\x00\x5e\xd7\xd8\x7c"
+	"page_offset_base\0\0\0\0"
+	"\x18\x00\x00\x00\xe7\x1d\xbe\xe6"
+	"remap_pfn_range\0"
+	"\x14\x00\x00\x00\xb0\x28\x9d\x4c"
+	"phys_base\0\0\0"
+	"\x18\x00\x00\x00\xe1\xbe\x10\x6b"
+	"_copy_to_user\0\0\0"
+	"\x1c\x00\x00\x00\xcb\xf6\xfd\xf0"
+	"__stack_chk_fail\0\0\0\0"
+	"\x18\x00\x00\x00\x9a\x5d\x9b\xf0"
+	"get_zeroed_page\0"
+	"\x1c\x00\x00\x00\x2b\x2f\xec\xe3"
+	"alloc_chrdev_region\0"
+	"\x14\x00\x00\x00\xcc\x68\x4c\x45"
+	"cdev_init\0\0\0"
+	"\x14\x00\x00\x00\xee\xdf\x01\xec"
+	"cdev_add\0\0\0\0"
+	"\x18\x00\x00\x00\xa0\x69\xa6\x5c"
+	"class_create\0\0\0\0"
+	"\x18\x00\x00\x00\x76\x0b\xc7\xd7"
+	"device_create\0\0\0"
+	"\x14\x00\x00\x00\xea\x7d\xef\x06"
+	"proc_create\0"
+	"\x18\x00\x00\x00\x39\x63\xf4\xc6"
+	"init_timer_key\0\0"
+	"\x14\x00\x00\x00\xeb\xd0\x02\x43"
+	"free_pages\0\0"
+	"\x18\x00\x00\x00\x10\x7d\xf7\x8e"
+	"class_destroy\0\0\0"
+	"\x14\x00\x00\x00\x16\x64\x0a\xd9"
+	"cdev_del\0\0\0\0"
+	"\x24\x00\x00\x00\x33\xb3\x91\x60"
+	"unregister_chrdev_region\0\0\0\0"
+	"\x1c\x00\x00\x00\x48\x9f\xdb\x88"
+	"__check_object_size\0"
+	"\x1c\x00\x00\x00\xdc\x90\xee\x82"
+	"timer_delete_sync\0\0\0"
+	"\x14\x00\x00\x00\xf4\xe0\x14\x99"
+	"proc_remove\0"
+	"\x18\x00\x00\x00\x13\xe2\x34\x7a"
+	"device_destroy\0\0"
+	"\x18\x00\x00\x00\xc2\x9c\xc4\x13"
+	"_copy_from_user\0"
+	"\x14\x00\x00\x00\x59\x5f\x86\xce"
+	"seq_read\0\0\0\0"
+	"\x14\x00\x00\x00\x48\x8c\xda\x41"
+	"seq_lseek\0\0\0"
+	"\x18\x00\x00\x00\x5b\x5b\x09\xb2"
+	"single_release\0\0"
+	"\x14\x00\x00\x00\xbb\x6d\xfb\xbd"
+	"__fentry__\0\0"
+	"\x10\x00\x00\x00\x7e\x3a\x2c\x12"
+	"_printk\0"
+	"\x1c\x00\x00\x00\xca\x39\x82\x5b"
+	"__x86_return_thunk\0\0"
+	"\x14\x00\x00\x00\xa1\x48\x64\x07"
+	"pcpu_hot\0\0\0\0"
+	"\x20\x00\x00\x00\x0b\x05\xdb\x34"
+	"_raw_spin_lock_irqsave\0\0"
+	"\x10\x00\x00\x00\xa6\x50\xba\x15"
+	"jiffies\0"
+	"\x14\x00\x00\x00\x6e\x4a\x6e\x65"
+	"snprintf\0\0\0\0"
+	"\x24\x00\x00\x00\x70\xce\x5c\xd3"
+	"_raw_spin_unlock_irqrestore\0"
+	"\x14\x00\x00\x00\xb8\x83\x8c\xc3"
+	"mod_timer\0\0\0"
+	"\x14\x00\x00\x00\xfc\xe3\xf8\xb8"
+	"single_open\0"
+	"\x14\x00\x00\x00\xc2\x17\xad\x4c"
+	"seq_printf\0\0"
+	"\x18\x00\x00\x00\xbd\xfe\x84\xc2"
+	"module_layout\0\0\0"
+	"\x00\x00\x00\x00\x00\x00\x00\x00";
+
+MODULE_INFO(depends, "");
+
+
+MODULE_INFO(srcversion, "54AD70EA6BEFCC64776572A");
