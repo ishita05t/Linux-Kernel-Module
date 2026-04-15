@@ -1,0 +1,33 @@
+name: Build Kernel Module
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Install kernel headers
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y linux-headers-$(uname -r) build-essential
+
+    - name: Build kernel module
+      run: make
+
+    - name: Show module info
+      run: |
+        ls -lh mydriver.ko
+        file mydriver.ko
+
+    - name: Upload .ko artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: mydriver-ko
+        path: mydriver.ko
